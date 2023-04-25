@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -13,35 +18,6 @@
     <input type="range" name="senha-slider" id="senha-slider" value="16" min="4" max="64">
     <button id="copiar">Copiar senha</button>
 </body>
-<script>
-    const inputEl = document.getElementById("senha")
-
-    let senhaSlider = 16
-
-    function gerarSenha() {
-        const chars = "abcdefghijklmnopqrstuvABCDEFGHIJKLMNOPQRSTUV123456789?!@&*()[]"
-        let senha = ""
-        for (let i = 0; i < senhaSlider; i++) {
-            const randomNumber = Math.floor(Math.random() * chars.length)
-            senha+= chars.substring(randomNumber, randomNumber + 1)
-        }
-        
-        inputEl.value = senha
-    }
-
-    const senhaSliderEl = document.querySelector("#senha-slider")
-    senhaSliderEl.addEventListener("input", function () {
-        senhaSlider = senhaSliderEl.value
-        gerarSenha()
-    })
-
-    function copiar () {
-        navigator.clipboard.writeText(inputEl.value) 
-    }
-
-    const copiarEl = document.querySelector("#copiar")
-    copiarEl.addEventListener("click", copiar)
-
-    gerarSenha()
+<script src="./script.js">
 </script>
 </html>
