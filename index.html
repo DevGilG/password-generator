@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Gerador de Senha</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,63 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <h1>Gerador de Senha</h1>
-    <p>Utilize o gerador de senhas para criar uma senha forte e segura de forma prática</p>
-    <input type="text" name="senha" id="senha">
-    <input type="range" name="senha-slider" id="senha-slider" value="16" min="4" max="64">
-    <button id="copiar">Copiar senha</button>
+    <main>
+        <section class="hero">
+            <h1 class="title">Gerador de Senha</h1>
+            <p class="subtitle">Utilize o gerador de senhas para criar uma senha forte e segura de forma prática</p>
+        </section>
+        <section class="box">
+            <div class="senha">
+             <div class="text">
+                <input type="text" name="senha" id="senha">
+                </div>
+                <div class="actions">
+                <button id="refresh"><ion-icon name="refresh-outline"></ion-icon></button>
+                <button id="copiar-1"><ion-icon name="copy-outline"></ion-icon></button>
+                </div>
+            </div>
+            <div class="security-indicator">
+                <div id="security-indicator" class="bar" style="width: 90%;"></div>
+             </div>
+            </div>
+        </section>
+        <section class="box2">
+            <h3 class="title">Personalizar</h3>
+            <div class="personalizacao">
+                <div class="content">
+                    <p>Tamanho: <span id="senha-slider-text">16</span></p>
+                    <input type="range" name="senha-slider" id="senha-slider" class="slider" value="16" min="4" max="64">
+                </div>
+                <div class="config">
+                    <label class="checkbox-container">
+                        <span>Maiúsculas</span>
+                        <input type="checkbox" id="uppercase-check" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container">
+                        <span>Números</span>
+                        <input type="checkbox" id="numbers-check" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container">
+                        <span>Simbolos</span>
+                        <input type="checkbox" id="symbols-check" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <div class="submit">
+            <button id="copiar-2">Copiar senha</button>
+        </div>
+    </main>
 </body>
 <script src="./script.js">
 </script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
